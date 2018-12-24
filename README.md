@@ -31,7 +31,7 @@ The following properties are optional;
 
 ### UI Layers
 
-- [Marker](Feature-Marker.md)
+- [Marker](UILayer-Marker.md)
 - Popup
 - Tooltip
 
@@ -53,7 +53,7 @@ The following properties are optional;
 
 - LayerGroup
 - FeatureGroup
-- GeoJson
+- [GeoJson](Feature-GeoJson.md)
 
 ### Basic Types
 
@@ -63,6 +63,10 @@ The following properties are optional;
 ### Functions
 
 - FitBounds
+
+## Structures
+
+All structures used by the Leaflet component are listed [here](Structures.md).
 
 ## FAQ
 
