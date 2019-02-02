@@ -1,23 +1,26 @@
 # Structures
 
-The leaflet component uses different structures to perform its actions. This page describes structures types. When possible the names of these structures are the same name as the Leaflet counterpart.
+The leaflet component uses different structures to perform its actions. All inputs that Leaflet normally requires have been placed in structures to allow the greatest amount of flexibility. If a leaflet class is depended on other leaflet class then that class is also added to the structure are a property.  
+For Leaflet Objects like Markers and Circles there is one base structure. This structure includes all required properties as well as the options that you can use on the object.
 
-## Point
+## Example - Marker
 
-Contains 2 decimals (latitude and longitude) that point to a certain coordinate.  
-![Point](/images/Structure-Point.jpg)
+If we take a look at the Leaflet documentation of Leaflet for the marker it looks like this:
 
-## LatLongBounds
+![Leaflet Marker Documentation](images/marker-leafletdocumentation.png)
 
-Contains 2 points that specify the boundary of an box. This is used mostly by FitBounds methods.  
-![LatLongBounds](/images/Structure-LatLongBounds.jpg)
+If we compare this with the structure used we see the following:
 
-## Marker
+![Outsystems Marker Documentantion](images/marker-outsystems.png)
 
-Defines a marker on the map. Most properties can be defined straight from this marker like a Popup.  
-![Marker](/images/Structure-Marker.jpg)
+In Outsystems we ask for the same information as the javascript counterpart would. So we need to specifiy the Latitude and Longitude and we can also supply several options to alter the standard behavior of the marker.
 
-## FeatureGroupMarkers
+Note: Supplying the options is optional. See the section "Default Values" for more information.
 
-A collection of Markers. This can be used to combine all markers to a single entity. This can be used to perform certain actions with all markers at once.  
-![FeatureGroupMarker](/images/Structure-FeatureGroupMarkers.jpg)
+### Name
+
+In addition of the needed data we also can specify the name of the marker. This name is used internally as the javascript variable name and can be used to bing popups, events and more to the marker. You can use the available functions for this.
+
+## Default values
+
+Since all Leaflet objects can have options specified and we also don't want to create a hugh class definition in Javascript that would increase the pagesize all properties of the options have default values that are equal to the javascript counterpart. Only when the default value is changed the option will be added to the javascript.
